@@ -1,6 +1,9 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jewel/auth/login_screen.dart';
+import 'package:jewel/authentication/login_screen.dart';
+import 'package:jewel/authentication/sign_up_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
               useMaterial3: true,
             ),
-            home: const LoginScreen(),
+            home: const SignUpScreen(),
           );
         });
   }
