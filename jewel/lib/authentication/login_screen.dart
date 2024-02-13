@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:jewel/constants/color.dart';
+import 'package:jewel/authentication/sign_up_screen.dart';
 import 'package:jewel/custom%20widgets/custom_elevated_button.dart';
 import 'package:jewel/custom%20widgets/custom_text_field.dart';
 import 'package:jewel/custom%20widgets/custom_text_field_label.dart';
@@ -14,6 +14,17 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  //passwword controller for email and password
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Padding(
           padding: EdgeInsets.all(24.0.sp),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               30.verticalSpace,
               Center(
@@ -61,8 +72,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 fontColor: Colors.grey,
                 fontWeight: FontWeight.w700,
               ),
-              const CustomStyledTextField(
+              CustomStyledTextField(
                 hintText: "someone@example.com",
+                controller: emailController,
               ),
               20.verticalSpace,
               const CustomTextFieldLabel(
@@ -70,8 +82,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 fontColor: Colors.grey,
                 fontWeight: FontWeight.w700,
               ),
-              const CustomStyledTextField(
+              CustomStyledTextField(
                 hintText: "anything@123",
+                controller: passwordController,
               ),
               30.verticalSpace,
               SizedBox(
@@ -80,7 +93,34 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: CustomElevatedButtonWithIcon(
                   onPressed: () {},
                 ),
-              )
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "New User?",
+                    style: TextStyle(
+                      fontSize: 15.sp,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignUpScreen()),
+                      );
+                    },
+                    child: Text(
+                      "Sign up",
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 15.sp,
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ],
           ),
         ),

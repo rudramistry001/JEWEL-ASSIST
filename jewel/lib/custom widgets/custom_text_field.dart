@@ -6,6 +6,7 @@ class CustomStyledTextField extends StatelessWidget {
   final String? labelText;
   final Widget? prefixIcon;
   final Widget? suffixIcon;
+  final TextEditingController? controller;
 
   const CustomStyledTextField({
     Key? key,
@@ -13,6 +14,7 @@ class CustomStyledTextField extends StatelessWidget {
     this.labelText,
     this.prefixIcon,
     this.suffixIcon,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -21,6 +23,7 @@ class CustomStyledTextField extends StatelessWidget {
       height: 50.sp,
       width: 360.sp,
       child: TextField(
+        controller: controller,
         decoration: InputDecoration(
           fillColor: Colors.grey, // Light blue fill color
           enabledBorder: OutlineInputBorder(

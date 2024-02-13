@@ -5,6 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jewel/authentication/login_screen.dart';
 import 'package:jewel/authentication/sign_up_screen.dart';
 
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+final GlobalKey<ScaffoldMessengerState> snackBarKey =
+    GlobalKey<ScaffoldMessengerState>();
 void main() {
   runApp(const MyApp());
 }
