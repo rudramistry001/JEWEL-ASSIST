@@ -25,6 +25,8 @@ class MyApp extends StatelessWidget {
         builder: (_, child) {
           return MaterialApp(
             title: 'Flutter Demo',
+            navigatorKey: navigatorKey,
+            scaffoldMessengerKey: snackBarKey,
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),

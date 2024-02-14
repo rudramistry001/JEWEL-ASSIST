@@ -7,6 +7,9 @@ class CustomStyledTextField extends StatelessWidget {
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final TextEditingController? controller;
+  final TextInputType? keyboardType;
+  final bool? obscureText;
+  final String? Function(String?)? validator;
 
   const CustomStyledTextField({
     Key? key,
@@ -15,6 +18,9 @@ class CustomStyledTextField extends StatelessWidget {
     this.prefixIcon,
     this.suffixIcon,
     this.controller,
+    this.keyboardType,
+    this.obscureText,
+    this.validator,
   }) : super(key: key);
 
   @override
@@ -22,8 +28,22 @@ class CustomStyledTextField extends StatelessWidget {
     return SizedBox(
       height: 50.sp,
       width: 360.sp,
-      child: TextField(
+      child: TextFormField(
+        validator: validator ??
+            (value) {
+              if (value != null && value.isNotEmpty) {
+                if (isValidEmail(value)) {
+                  return null;
+                } else {
+                  return 'Please enter a valid email address';
+                }
+              } else {
+                return 'Required Field';
+              }
+            },
         controller: controller,
+        keyboardType: keyboardType,
+        obscureText: obscureText ?? false, // Use obscureText property here
         decoration: InputDecoration(
           fillColor: Colors.grey, // Light blue fill color
           enabledBorder: OutlineInputBorder(
@@ -54,4 +74,12 @@ class CustomStyledTextField extends StatelessWidget {
       ),
     );
   }
+}
+
+bool isValidEmail(String email) {
+  // Regular expression for validating an email address
+  // This regex checks for the presence of "@" and "."
+  // It doesn't check for the exact format of the email address
+  // For example, it won't catch "name@example"
+  return RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(email);
 }

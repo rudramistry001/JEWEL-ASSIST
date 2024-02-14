@@ -8,4 +8,9 @@ class RegisterRepository {
     final response = await registerServices.registerUser(register);
     return response;
   }
+
+  Future loginUser(RegisterModel loginUser) async {
+    final response = await registerServices.loginUser(loginUser);
+    return response;
+  }
 }

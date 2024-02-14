@@ -1,5 +1,5 @@
 class ImagePath {
-  static const svgFolder = 'assets/svg/';
+  static const imageFolder = 'assets/images/';
 
-  static const appLogo = '${svgFolder}app-icon.svg';
+  static const appLogo = '${imageFolder}logo.png';
 }

@@ -18,9 +18,9 @@ SnackBar customSnackBar({required String message}) {
     content: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SvgPicture.asset(
+        Image.asset(
           ImagePath.appLogo,
-          height: 18.sp,
+          height: 20.sp,
         ),
         10.horizontalSpace,
         Expanded(
