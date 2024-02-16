@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'dart:async';
+import 'package:jewel/constants/urls.dart';
 import 'package:jewel/model/register_model.dart';
 import 'package:jewel/services/base_service.dart';
 
@@ -10,7 +11,8 @@ class RegisterServices extends BaseApiProvider {
 
     try {
       final response = await postRequest(
-          Uri.parse('https://2703-115-246-26-148.ngrok-free.app/v1/register'),
+          Uri.parse(
+              UrlConstant.uatUrl + UrlConstant.version + UrlConstant.register),
           body);
       // You can handle the response here according to your requirements
       return response;
@@ -26,7 +28,8 @@ class RegisterServices extends BaseApiProvider {
 
     try {
       final response = await postRequest(
-          Uri.parse('https://2703-115-246-26-148.ngrok-free.app/v1/login'),
+          Uri.parse(
+              UrlConstant.uatUrl + UrlConstant.version + UrlConstant.login),
           body);
       // You can handle the response here according to your requirements
       return response;

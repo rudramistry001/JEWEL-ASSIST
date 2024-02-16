@@ -5,6 +5,7 @@ import 'package:jewel/authentication/sign_up_screen.dart';
 import 'package:jewel/custom%20widgets/custom_elevated_button.dart';
 import 'package:jewel/custom%20widgets/custom_text_field.dart';
 import 'package:jewel/custom%20widgets/custom_text_field_label.dart';
+import 'package:jewel/home_screen.dart';
 import 'package:jewel/model/register_model.dart';
 
 import 'package:jewel/view%20model/register_view_model.dart';

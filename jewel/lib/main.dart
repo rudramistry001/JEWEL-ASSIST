@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
             scaffoldMessengerKey: snackBarKey,
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
               useMaterial3: true,
             ),
             home: const SignUpScreen(),
